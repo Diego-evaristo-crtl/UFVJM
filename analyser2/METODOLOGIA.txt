@@ -1,0 +1,84 @@
+
+python 3.13.1
+  - https://www.python.org/downloads/
+  - gratuito
+
+bibliotecas usadas:
+
+  1> pillow
+    - apenas o modulo "Image" foi utilizado
+    - analise de imagems simples
+    - biblioteca terceirizada e gratuita
+
+  2> collections
+    - permite o uso de coleções mais especializadas
+    - apenas a classe "Counter" foi utilizada
+    - biblioteca nativa e gratuita
+
+  3> colorsys
+    - permite converções entre cores em diferentes sistemas (como RGB, HSL, HSV)
+    - apenas a função "rgb_to_hsl" foi utilizada
+    - biblioteca nativa e gratuita
+
+  4> modulo ttk do tkinter:
+    - permite a criação de interfaces graficas para usuarios (GUI)
+    - utilizado com 'wrapper' ttkbootstrap
+    - biblioteca nativa e gratuita
+  
+  5> ttkbootstrap:
+    - wrapper do modulo ttk.
+    - permite a criação de GUI's ligeiramente mais modernas 
+    - biblioteca terceirizada e gratuita
+  
+  6> os
+    - permite melhores interações entre o programa e o sistema operacional
+    - utilizado para checkar se os caminhos passados são validos
+    - biblioteca nativa e gratuita
+    
+  todos as bibliotecas terceirizados podem ser instalados com 'pip install <biblioteca>'
+  
+Algoritimo:
+  o algoritimo funciona iterando entre todos os pixeis
+  da imagem fornecida e jogando-os contra uma série de 
+  condicionais, este, pode ser encontrado dentro da função
+  'scan'.
+
+  a complexidade do algoritimo é de O(n²):
+  
+  for x in img.size[0]:
+    for y in img.size[1]:
+      ....
+
+  após isso, os valores RGB e HSL do pixel é analisado da seguinte forma:
+    ( PSEUDO-CODIGO... R: red. G: green. B: blue | H: hue. S: saturation. L: lightness ):
+
+      se G > (R-10) e G > (B-10): 
+          saudavel;
+          proximo pixel;
+  
+      se R > B and R > G:
+          tenta converter RGB para HSL
+          caso seja a conversão possivel:
+
+              se B < 150 e (S < 55 L > 115): 
+                  saudavel
+                  proximo pixel
+           
+              do contrario:
+                  doente
+                  proximo
+        
+          caso a conversão não seja possivel (divisões por 0 podem acontecer):
+            doente
+            proximo
+
+      do contrario:
+        considerar como fundo.
+
+    ( FIM DO ALGORITMO)
+
+
+o codigo completo pode ser encontrado em:
+  https://github.com/Diego-evaristo-crtl/skills-introduction-to-github/tree/UFMG/analyser2
+
+
