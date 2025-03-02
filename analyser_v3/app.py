@@ -153,20 +153,22 @@ class App(ttk.Window):
 '''
     \tInformações de uso.
     Devido a forma como as fotos são analisadas,
-    todas devem ter seus fundos dar cor azul.
-    Caso necessario, use softwares como paint.
+    todas devem ter seus fundos dar cor azul,
+    caso necessario, use softwares como paint
+    ou krita para editar as fotos.
     
     Cada foto é analisada por vez, portanto,
     recomendo que deixe o caminho para a pasta
-    onde as fotos estão sendo usadas já escrito,
-    e mude apenas o nome do arquivo para escanear.
+    onde as fotos estão sendo usadas escrito,
+    e mude apenas o nome do arquivo para escanear
+    fotos diferentes.
     
     Lembre-se de colocar o caminho apenas da pasta,
     sem o nome do arquivo, na sua respectiva área,
     e o nome da foto na entrada abaixo. por exemplo:
-    para o caminho 'C:documentos/fotos/f1.jpeg' deve
-    ser colocado 'C1:documentos/fotos' na primeira
-    entrada, e 'f1.jpeg' na segunda.
+    para o caminho 'documentos/fotos/f1.jpg' deve
+    ser colocado 'documentos/fotos' na primeira
+    entrada, e 'f1.jpg' na segunda.
     
     Os valores dependentes de medidas serão dados
     sem conversão, se entregues em cm, serão
